@@ -37,16 +37,11 @@ const getErrorInfo = (barcodes,items)=>{
         return doseBarcodesExist(barcodes,items)?'':errorInfo;
 }
 const getItemsByDecodeBarcodes = (barcodes)=>{
-//      let cartItems= new Map();
-        // let cartItems = items;
         let items = loadAllItem();
         items.forEach(function(item){
           item.count=0;
         });
-//        console.log('items:');
-//        console.log(items);
        barcodes.forEach(function(barcode){
-//       console.log('barcodes:');
             items.map(function(item){
                   if(barcode==item.id){
                    item.count=item.count==0?1:++item.count;
